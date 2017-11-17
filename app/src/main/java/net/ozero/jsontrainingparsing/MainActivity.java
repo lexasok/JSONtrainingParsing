@@ -23,7 +23,9 @@ public class MainActivity extends AppCompatActivity {
         try {
             InputStream inputStream = getAssets().open("list.json");
             int size = inputStream.available();
-
+            byte[] buffer = new byte[size];
+            inputStream.read(buffer);
+            inputStream.close();
 
         } catch (Exception e) {
             e.printStackTrace();
