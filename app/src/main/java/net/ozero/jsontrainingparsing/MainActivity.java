@@ -21,7 +21,9 @@ public class MainActivity extends AppCompatActivity {
     public String loadJSONFrommAsset() {
         String json = null;
         try {
-            InputStream inputStream = getAssets().open();
+            InputStream inputStream = getAssets().open("list.json");
+            int size = inputStream.available();
+
 
         } catch (Exception e) {
             e.printStackTrace();
