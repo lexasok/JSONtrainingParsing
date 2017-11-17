@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -30,6 +31,8 @@ public class MainActivity extends AppCompatActivity {
             JSONArray jsonArray = root.getJSONArray("array");
             setTitle(root.getString("title"));
 
+
+
             for (int i = 0; i < jsonArray.length(); i++) {
                 JSONObject object = jsonArray.getJSONObject(i);
                 items.add(object.getString("company"));
@@ -40,6 +43,8 @@ public class MainActivity extends AppCompatActivity {
             if (listView != null) {
                 listView.setAdapter(adapter);
             }
+
+
 
             JSONObject nested = root.getJSONObject("nested");
             Log.d("TAG","flag value " + nested.getBoolean("flag"));
